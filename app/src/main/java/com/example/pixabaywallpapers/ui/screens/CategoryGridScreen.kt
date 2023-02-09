@@ -107,5 +107,8 @@ val categories = listOf<Category>(
     Category("nature", Icons.Default.Forest),
     Category("science", Icons.Default.Science),
     Category("animals", Icons.Default.Pets),
-    Category("sports", Icons.Default.SportsSoccer)
+    Category("sports", Icons.Default.SportsSoccer),
+    Category("food", Icons.Default.LunchDining),
+    Category("buildings", Icons.Default.LocationCity),
+    Category("music", Icons.Default.MusicNote)
 )
