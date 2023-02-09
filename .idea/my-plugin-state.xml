@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="PluginState">
+    <option name="automaticallyGenerateClassFromResponses" value="true" />
+    <option name="framework" value="GSON" />
+    <option name="language" value="KOTLIN" />
+    <option name="returnType" value="Response&lt;T&gt;" />
+    <option name="returnTypeClassesDirectory" value="$PROJECT_DIR$" />
+    <option name="returnTypeRadioButton" value="BUTTON_RETROFIT_AND_COROUTINES" />
+    <option name="returnTypeClassInfoList" value="[{&quot;className&quot;:&quot;my-plugin-state&quot;,&quot;classExtension&quot;:&quot;xml&quot;},{&quot;className&quot;:&quot;deploymentTargetDropDown&quot;,&quot;classExtension&quot;:&quot;xml&quot;},{&quot;className&quot;:&quot;PictureScreen&quot;,&quot;classExtension&quot;:&quot;kt&quot;}]" />
+  </component>
+</project>
