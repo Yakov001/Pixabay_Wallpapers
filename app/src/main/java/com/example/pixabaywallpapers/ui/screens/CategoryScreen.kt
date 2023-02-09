@@ -6,6 +6,7 @@ import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.foundation.lazy.grid.items
 import androidx.compose.material3.CircularProgressIndicator
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -42,13 +43,17 @@ fun CategoryScreen(
                     )
                 }
             }
-        } else if (pixabayResponse is Resource.Loading) {
+        } else {
             Column(
                 modifier = Modifier.fillMaxSize(),
                 horizontalAlignment = Alignment.CenterHorizontally,
                 verticalArrangement = Arrangement.Center
             ) {
-                CircularProgressIndicator()
+                if (pixabayResponse is Resource.Loading) {
+                    CircularProgressIndicator()
+                } else if (pixabayResponse is Resource.Error) {
+                    Text(text = pixabayResponse.message!!, color = MaterialTheme.colorScheme.error)
+                }
             }
         }
     }

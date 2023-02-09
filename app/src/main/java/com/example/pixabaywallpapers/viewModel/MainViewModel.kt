@@ -21,18 +21,15 @@ class MainViewModel : ViewModel() {
                 PixabayApi.getInstance().requestCategory(category)
             } catch (e: Exception) {
                 Log.e("retrofit exception", e.message.toString())
-                categoryResponse.value = Resource.Error("Exception")
+                categoryResponse.value = Resource.Error(e.message.toString())
                 return@launch
             }
 
             if (response.isSuccessful) categoryResponse.value = Resource.Success(response.body()!!)
             else {
-                if (response.code() == 404) {
-                    Log.d("response", response.code().toString())
-                    categoryResponse.value = Resource.Error(message = "Error 404: BIN not found")
-                } else {
-                    Log.d("response", response.errorBody().toString())
-                    categoryResponse.value = Resource.Error(message = "Incorrect Input")
+                response.errorBody().toString().also {
+                    Log.d("response", it)
+                    categoryResponse.value = Resource.Error(message = it)
                 }
             }
         }

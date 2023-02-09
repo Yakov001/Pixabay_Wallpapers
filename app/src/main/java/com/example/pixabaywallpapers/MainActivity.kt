@@ -17,10 +17,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
 import com.example.pixabaywallpapers.model.Resource
-import com.example.pixabaywallpapers.ui.screens.CategoryGridScreen
-import com.example.pixabaywallpapers.ui.screens.CategoryScreen
-import com.example.pixabaywallpapers.ui.screens.PictureScreen
-import com.example.pixabaywallpapers.ui.screens.SplashScreen
+import com.example.pixabaywallpapers.ui.screens.*
 import com.example.pixabaywallpapers.ui.theme.PixabayWallpapersTheme
 import com.example.pixabaywallpapers.viewModel.MainViewModel
 
