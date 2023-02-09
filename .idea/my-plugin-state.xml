@@ -7,6 +7,6 @@
     <option name="returnType" value="Response&lt;T&gt;" />
     <option name="returnTypeClassesDirectory" value="$PROJECT_DIR$" />
     <option name="returnTypeRadioButton" value="BUTTON_RETROFIT_AND_COROUTINES" />
-    <option name="returnTypeClassInfoList" value="[{&quot;className&quot;:&quot;my-plugin-state&quot;,&quot;classExtension&quot;:&quot;xml&quot;},{&quot;className&quot;:&quot;deploymentTargetDropDown&quot;,&quot;classExtension&quot;:&quot;xml&quot;},{&quot;className&quot;:&quot;PictureScreen&quot;,&quot;classExtension&quot;:&quot;kt&quot;}]" />
+    <option name="returnTypeClassInfoList" value="[{&quot;className&quot;:&quot;my-plugin-state&quot;,&quot;classExtension&quot;:&quot;xml&quot;},{&quot;className&quot;:&quot;deploymentTargetDropDown&quot;,&quot;classExtension&quot;:&quot;xml&quot;},{&quot;className&quot;:&quot;PictureScreen&quot;,&quot;classExtension&quot;:&quot;kt&quot;},{&quot;className&quot;:&quot;vcs&quot;,&quot;classExtension&quot;:&quot;xml&quot;}]" />
   </component>
 </project>

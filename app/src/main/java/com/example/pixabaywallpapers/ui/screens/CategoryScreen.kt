@@ -5,33 +5,50 @@ import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.foundation.lazy.grid.items
+import androidx.compose.material3.CircularProgressIndicator
+import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.unit.dp
 import coil.compose.AsyncImage
 import com.example.pixabaywallpapers.model.CategoryResponse
 import com.example.pixabaywallpapers.model.Hit
+import com.example.pixabaywallpapers.model.Resource
 
 @Composable
 fun CategoryScreen(
     category: String,
-    pixabayResponse: CategoryResponse,
+    pixabayResponse: Resource<CategoryResponse>,
     onPhotoClick: (Hit) -> Unit
 ) {
     Column(Modifier.fillMaxSize()) {
-        Box(modifier = Modifier.fillMaxWidth().padding(8.dp)) {
+        Surface(modifier = Modifier
+            .fillMaxWidth()
+            .padding(16.dp)
+        ) {
             Text(text = category.capitalize())
         }
-        LazyVerticalGrid(
-            columns = GridCells.Adaptive(minSize = 128.dp)
-        ) {
-            items(pixabayResponse.hits) {
-                PhotoItem(
-                    photoUrl = it.previewURL,
-                    onPhotoClick = { onPhotoClick(it) }
-                )
+        if (pixabayResponse is Resource.Success) {
+            LazyVerticalGrid(
+                columns = GridCells.Adaptive(minSize = 128.dp)
+            ) {
+                items(pixabayResponse.data!!.hits) {
+                    PhotoItem(
+                        photoUrl = it.previewURL,
+                        onPhotoClick = { onPhotoClick(it) }
+                    )
+                }
+            }
+        } else if (pixabayResponse is Resource.Loading) {
+            Column(
+                modifier = Modifier.fillMaxSize(),
+                horizontalAlignment = Alignment.CenterHorizontally,
+                verticalArrangement = Arrangement.Center
+            ) {
+                CircularProgressIndicator()
             }
         }
     }

@@ -87,15 +87,11 @@ fun WallpaperNavHost(
             arguments = listOf(navArgument("name") {type = NavType.StringType})
         ) { entry ->
             val categoryName = entry.arguments!!.getString("name")!!
-            if (categoryResponse.value is Resource.Loading) {
-                Text(text = "LOADING...")
-            } else if (categoryResponse.value is Resource.Success) {
-                CategoryScreen(
-                    category = categoryName,
-                    pixabayResponse = categoryResponse.value.data!!,
-                    onPhotoClick = { navController.navigate("${WallpaperScreen.Category.name}/$categoryName/${it.id}") }
-                )
-            }
+            CategoryScreen(
+                category = categoryName,
+                pixabayResponse = categoryResponse.value,
+                onPhotoClick = { navController.navigate("${WallpaperScreen.Category.name}/$categoryName/${it.id}") }
+            )
         }
         composable(
             route = "${WallpaperScreen.Category.name}/{name}/{id}",
